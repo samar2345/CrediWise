@@ -1,0 +1,11 @@
+{
+  "name": "crediwise",
+  "version": "1.0.0",
+  "description": "Credit Score Simulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samar Suryawanshi",
+  "license": "ISC"
+}
