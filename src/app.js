@@ -12,7 +12,7 @@ app.use(express.json({limit:"16kb"}))// Can access json data from the body of th
 //limit is used to limit the size of the data that can be sent in the request body
 app.use(express.urlencoded({extended:true,limit:"16kb"}))//extended object, used when data is sent in url, some changes are made, to handle them
 app.use(express.static("public"))//for storing pdfs, images, so that anyone can acces it???
-app.use(cookieParser())//used to read and update cookies on the browser of user
+app.use(cookieParser())//used to read and update cookies on thekies on the browser of user
 
 //routes import
 // import userRouter from './routes/user.routes.js'
@@ -22,10 +22,11 @@ app.use(cookieParser())//used to read and update cookies on the browser of user
 // import likeRouter from './routes/like.routes.js'
 // import commentRouter from './routes/comment.routes.js'
 // import videoRouter from './routes/video.routes.js'
+import userRouter from './routes/user.routes.js' //importing user router from user.routes.js file
 
 
 //routes declaration
-// app.use("/api/v1/users",userRouter) //api/v1??
+app.use("/api/v1/users",userRouter) //api/v1??
 // app.use("/api/v1/tweets",tweetRouter)
 // app.use("/api/v1/playlists",playlistRouter)
 // app.use("/api/v1/subscriptions",subscriptionRouter)
