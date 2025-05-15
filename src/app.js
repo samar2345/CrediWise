@@ -23,10 +23,30 @@ app.use(cookieParser())//used to read and update cookies on thekies on the brows
 // import commentRouter from './routes/comment.routes.js'
 // import videoRouter from './routes/video.routes.js'
 import userRouter from './routes/user.routes.js' //importing user router from user.routes.js file
+import creditReportRouter from './routes/creditReport.routes.js' //importing credit report router from creditReport.routes.js file
+import scoreHistoryRouter from './routes/scoreHistory.routes.js' //importing score history router from scoreHistory.routes.js file
+import budgetRouter from './routes/budget.routes.js' //importing budget router from budget.routes.js file
+import expenseRouter from './routes/expense.routes.js' //importing budget router from budget.routes.js file
+import recommendationRouter from './routes/recommendation.routes.js' //importing budget router from budget.routes.js file
+import insightRouter from './routes/insight.routes.js' //importing budget router from budget.routes.js file
+import goalRouter from './routes/goal.routes.js' //importing budget router from budget.routes.js file
+import recurringPaymentRouter from './routes/recurringPayment.routes.js' //importing budget router from budget.routes.js file
+import notificationRouter from './routes/notification.routes.js' //importing budget router from budget.routes.js file
 
 
 //routes declaration
 app.use("/api/v1/users",userRouter) //api/v1??
+app.use("/api/v1/creditReports",creditReportRouter) 
+app.use("/api/v1/scoreHistory",scoreHistoryRouter)
+app.use("/api/v1/budget",budgetRouter) //api/v1??
+app.use("/api/v1/expense",expenseRouter) //api/v1??
+app.use("/api/v1/recommendation",recommendationRouter) //api/v1?
+app.use("/api/v1/insight",insightRouter) //api/v1??
+app.use("/api/v1/goal",goalRouter) //api/v1??
+app.use("/api/v1/recurringPayment",recurringPaymentRouter) //api/v1??
+app.use("/api/v1/notification",notificationRouter) //api/v1??
+
+
 // app.use("/api/v1/tweets",tweetRouter)
 // app.use("/api/v1/playlists",playlistRouter)
 // app.use("/api/v1/subscriptions",subscriptionRouter)

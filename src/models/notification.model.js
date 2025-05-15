@@ -1,43 +1,37 @@
 import mongoose, { Schema } from "mongoose";
 
-const goalSchema = new Schema(
+const notificationSchema = new Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    name: {
+    type: {
+      type: String,
+      enum: ["spending_alert", "goal_achievement", "bill_reminder", "credit_score_change", "insight", "system"],
+      required: true,
+    },
+    title: {
       type: String,
       required: true,
       trim: true,
     },
-    targetAmount: {
-      type: Number,
-      required: true,
-    },
-    currentAmount: {
-      type: Number,
-      default: 0,
-    },
-    deadline: {
-      type: Date,
-    },
-    category: {
+    message: {
       type: String,
-      enum: ["savings", "debt", "investment", "emergency", "custom"],
-      default: "custom",
+      required: true,
+      trim: true,
     },
-    isCompleted: {
+    isRead: {
       type: Boolean,
       default: false,
     },
-    notes: {
-      type: String,
+    actionUrl: {
+      type: String, // optional URL for redirection (e.g., go to reports page)
       trim: true,
     },
   },
   { timestamps: true }
 );
 
-export const Goal = mongoose.model("Goal", goalSchema);
+export const Notification = mongoose.model("Notification", notificationSchema);
